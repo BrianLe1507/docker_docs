@@ -13,6 +13,9 @@ VD: cho vi du
 #### - Docker là gì:
 ![alt text](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png)
 ![alt text](https://www.docker.com/sites/default/files/d8/2018-11/container-vm-whatcontainer_2.png)
+
+Docker theo mô hình Containerlization: chia sẽ chung một Host os. 
+
 #### Image và Container:
 
 Docker image là nền tảng của container, có thể hiểu Docker image như khung xương giúp định hình cho container, nó sẽ tạo ra container khi thực hiện câu lệnh chạy image đó. Nếu nói với phong cách lập trình hướng đối tượng, Docker image là class, còn container là thực thể (instance, thể hiện) của class đó.
@@ -24,19 +27,29 @@ Docker image là nền tảng của container, có thể hiểu Docker image nh�
 
 
 #### - Docker-compose là gì:
-- Chức năng
+- Chức năng: là một file .yml dùng để chỉ thị việc tạo ra các images từ một hoặc nhiều file Dockerfile, sau dó nó sẽ kết nối các container tạo từ các image trên với nhau. Việc tạo image và chạy build container được gọi là một service.
+```
+services:
+    webserver:
+        .
+        .
+        .
+    mysql:
+        image: mysql:5.7 
+        container_name: mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+        volumes:
+          - docker/database:/var/lib/mysql
 
+```
 
-## Cách hoạt động:
-
-
-## Cài đặt:
-- Account docker hub
-- Install docker application in desktop
 
 ## Môi trường & hệ sinh thái(tools):
 - Docker hub
 	- Docker hub là nơi lưu giữ và chia sẻ các file images này (hiện có khoảng 300.000 images)
+	- Có thể tưởng tượng nó như github là nơi để lưu trữ source code và quản lý version, Docker hub cho phép lưu trữ nhưng image được build từ máy local, sau đó push lên docker hub để lưu trữ. 
 
 - Docker swarm
 - Docker Kubernetes
