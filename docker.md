@@ -11,9 +11,11 @@ VD: cho vi du
 
 ## Khái niệm căn bản:
 #### - Docker là gì:
+
 ![alt text](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png)
 ![alt text](https://www.docker.com/sites/default/files/d8/2018-11/container-vm-whatcontainer_2.png)
 
+![alt text](https://docs.docker.com/engine/images/engine-components-flow.png)
 Docker theo mô hình Containerlization: chia sẽ chung một Host os. 
 
 #### Image và Container:
